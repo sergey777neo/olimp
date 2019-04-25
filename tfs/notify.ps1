@@ -6,7 +6,7 @@ $JSON = @'
 { "state": "pending", "target_url": "http://168.62.57.106:8080/tfs/Projects/Olimp2019/_build?_a=summary&buildId=$(Build.BuildNumber)", "description": "The build is running", "context": "continuous-integration/tfs" }
 '@
 
-$URI = "https://api.github.com/repos/ddrakonn/olimp/statuses/$(Build.SourceVersion)"
+$URI = "https://api.github.com/repos/ddrakonn/olimp/statuses/$(Build.sourceVersion)"
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -Uri $URI -Method POST -Headers $headers -Body $JSON -MaximumRedirection 0 -ErrorVariable Err
