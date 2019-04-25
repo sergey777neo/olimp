@@ -6,7 +6,7 @@ $JSON = @'
 { "state": "pending", "target_url": "http://168.62.57.106:8080/tfs/Projects/Olimp2019/_build?_a=summary&buildId=$(Build.BuildNumber)", "description": "The build is running", "context": "continuous-integration/tfs" }
 '@
 
-$Source = "$(Build.sourceVersion)"
+$Source = $Env:BUILD_SOURCEVERSION 
 
 $URI = "https://api.github.com/repos/ddrakonn/olimp/statuses/$Source"
 
