@@ -28,7 +28,7 @@ namespace Github.Webhooks
                 "-sha |--sha <sha>",
                 "Github sha.", CommandOptionType.SingleValue);
             CommandOption token = commandLineApplication.Option(
-               "-token |--token <sha>",
+               "-t |--token <token>",
                "Github token.", CommandOptionType.SingleValue);
 
 

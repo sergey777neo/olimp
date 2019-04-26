@@ -4,6 +4,6 @@
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>--state "pending" --sha "76c9b4e3bc04f0fddd3072f4ba99af4b9c18e7f3" --buildid  "26"</StartArguments>
+    <StartArguments>--state "pending" --sha "76c9b4e3bc04f0fddd3072f4ba99af4b9c18e7f3" --buildid  "26" --token "fe58922d4cd07093a966075244042daa966a67d2 "</StartArguments>
   </PropertyGroup>
 </Project>
