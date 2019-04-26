@@ -3,3 +3,6 @@
 ################################################################################
 
 /tfs/Github.Webhooks/.vs/Github.Webhooks/v14
+/tfs/Github.Webhooks/bin/Debug
+/tfs/Github.Webhooks/obj/Debug
+/tfs/Github.Webhooks/packages
