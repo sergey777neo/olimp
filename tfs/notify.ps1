@@ -1,4 +1,4 @@
-$UserToken = "56881bd4f3440c06af865747539426147a458cc9"
+$UserToken = 
 $Headers = @{Authorization = 'token ' + $UserToken}
 
 $JSON = @{ 	

@@ -27,8 +27,11 @@ namespace Github.Webhooks
             CommandOption sha = commandLineApplication.Option(
                 "-sha |--sha <sha>",
                 "Github sha.", CommandOptionType.SingleValue);
-            
-            
+            CommandOption token = commandLineApplication.Option(
+               "-token |--token <sha>",
+               "Github token.", CommandOptionType.SingleValue);
+
+
             commandLineApplication.HelpOption("-? | -h | --help");
 
             commandLineApplication.OnExecute(() =>
@@ -42,9 +45,10 @@ namespace Github.Webhooks
                 Console.WriteLine("Build Id = " + buildId.Value());
                 Console.WriteLine("State = " + state.Value());
                 Console.WriteLine("Sha = " + sha.Value());
+                Console.WriteLine("Token = " + token.Value());
 
                 HttpClient client = new HttpClient();
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("token", "56881bd4f3440c06af865747539426147a458cc9");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("token", token.Value());
                 client.DefaultRequestHeaders.Add("User-Agent", "TFS Status publisher");
                 State st = new State()
                 {
