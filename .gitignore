@@ -8,3 +8,5 @@
 /Project/Olimp2019.Data/obj
 /Project/Olimp2019.Web/bin/Debug/netcoreapp2.0
 /Project/Olimp2019.Web/obj
+/Project/Olimp2019.Web/bin/Release/netcoreapp2.0
+/Project/Olimp2019.Data/bin/Release/netstandard2.0
