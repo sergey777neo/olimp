@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.idea
+/Project/.vs
+/Project/Olimp2019.Data/bin/Debug/netstandard2.0
+/Project/Olimp2019.Data/obj
+/Project/Olimp2019.Web/bin/Debug/netcoreapp2.0
+/Project/Olimp2019.Web/obj
