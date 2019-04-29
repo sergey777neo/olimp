@@ -8,5 +8,11 @@
 /Project/Olimp2019.Data/obj
 /Project/Olimp2019.Web/bin/Debug/netcoreapp2.0
 /Project/Olimp2019.Web/obj
+/Project/Olimp2019.Web/wwwroot/css/*.min.css
+/Project/Olimp2019.Web/wwwroot/js/*.min.js
 /Project/Olimp2019.Web/bin/Release/netcoreapp2.0
 /Project/Olimp2019.Data/bin/Release/netstandard2.0
+/Project/Olimp2019.Tests/obj
+/Project/Olimp2019.Tests/bin/Debug/netcoreapp2.0
+/Project/Olimp2019.Tests/bin/Release/netcoreapp2.0
+/tfs

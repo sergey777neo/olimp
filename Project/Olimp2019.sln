@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olimp2019.Web", "Olimp2019.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olimp2019.Data", "Olimp2019.Data\Olimp2019.Data.csproj", "{2A62FFCB-A26E-4C74-ADFD-1C62FDCDAFD8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimp2019.Tests", "Olimp2019.Tests\Olimp2019.Tests.csproj", "{F9E03B61-0A8C-4ECF-BCEE-C7BCFB3EF613}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{2A62FFCB-A26E-4C74-ADFD-1C62FDCDAFD8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2A62FFCB-A26E-4C74-ADFD-1C62FDCDAFD8}.Release|x64.ActiveCfg = Release|Any CPU
 		{2A62FFCB-A26E-4C74-ADFD-1C62FDCDAFD8}.Release|x64.Build.0 = Release|Any CPU
+		{F9E03B61-0A8C-4ECF-BCEE-C7BCFB3EF613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9E03B61-0A8C-4ECF-BCEE-C7BCFB3EF613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9E03B61-0A8C-4ECF-BCEE-C7BCFB3EF613}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F9E03B61-0A8C-4ECF-BCEE-C7BCFB3EF613}.Debug|x64.Build.0 = Debug|Any CPU
+		{F9E03B61-0A8C-4ECF-BCEE-C7BCFB3EF613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9E03B61-0A8C-4ECF-BCEE-C7BCFB3EF613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9E03B61-0A8C-4ECF-BCEE-C7BCFB3EF613}.Release|x64.ActiveCfg = Release|Any CPU
+		{F9E03B61-0A8C-4ECF-BCEE-C7BCFB3EF613}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
