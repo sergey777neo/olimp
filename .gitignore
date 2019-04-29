@@ -6,3 +6,8 @@
 /tfs/Github.Webhooks/bin/Debug
 /tfs/Github.Webhooks/obj/Debug
 /tfs/Github.Webhooks/packages
+/tfs/Github.Webhooks/.vs/config
+/tfs/Github.Webhooks/obj/Release
+/tfs/publish
+/tfs/TFS.Webhook/bin
+/tfs/TFS.Webhook/obj
