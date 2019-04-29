@@ -29,18 +29,25 @@ namespace Olimp2019
 			services.AddDbContext<ApplicationDbContext>(options =>
 				options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-			services.AddIdentity<User, Role>(options =>
-			{
-				options.Password.RequireNonAlphanumeric = false;
-			})
+			services
+				.AddIdentity<User, Role>(options => { options.Password.RequireNonAlphanumeric = false; })
 				.AddEntityFrameworkStores<ApplicationDbContext>()
 				.AddDefaultTokenProviders();
 
 			services.AddMvc()
-				.AddRazorPagesOptions(options =>
-				{
+				.AddRazorPagesOptions(options => {
 					options.Conventions.AuthorizeFolder("/Account/Manage");
 					options.Conventions.AuthorizePage("/Account/Logout");
+				});
+
+			services.AddAuthentication()
+				.AddFacebook(facebookOptions => {
+					facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+					facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+				})
+				.AddGoogle(options => { 
+					options.ClientId = Configuration["Authentication:Google:ClientId"];
+					options.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
 				});
 
 			// Register no-op EmailSender used by account confirmation and password reset during development
