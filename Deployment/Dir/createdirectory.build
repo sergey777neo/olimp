@@ -1,0 +1,17 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <BasePath>Z:</BasePath>
+		<BuildPath>Build_X</BuildPath>
+    </PropertyGroup>
+
+    <Target Name="CreateDirectories">
+	 <MakeDir
+            Directories="$(BasePath)\$(BuildPath)"/>
+        <MakeDir
+            Directories="$(BasePath)\$(BuildPath)\sql"/>
+		<MakeDir
+            Directories="$(BasePath)\$(BuildPath)\web"/>
+    </Target>
+
+</Project>
