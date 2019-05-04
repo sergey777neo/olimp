@@ -1,0 +1,127 @@
+body {
+	background: url(../images/background_game.png);
+	background-color: #00072d;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.game-page__left-bar {
+	position: fixed;
+	height: 100%;
+	min-width: 84px;
+	width: 84px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background-color: rgba(0, 0, 0, 0.2);
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	z-index: 10;
+}
+
+.game-page__top-bar {
+	position: fixed;
+	min-height: 84px;
+	height: 84px;
+	width: 100%;
+	padding-right: 30px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.game-page__levels {
+	display: flex;
+	flex-direction: column;
+}
+
+.game-page__left-bar__item {
+	min-width: 82px;
+	width: 82px;
+	height: 82px;
+	min-height: 82px;
+	text-align: center;
+	line-height: 82px;
+	cursor: pointer;
+}
+
+.game-page__left-bar__item:hover {
+	background-color: rgba(255, 255, 255, 0.1)
+}
+
+.game-page__map {
+	background: url(../images/map.svg) 24px 24px no-repeat;
+	background-position: center;
+}
+
+.game-page__exit {
+	background: url(../images/logout.svg) 24px 24px no-repeat;
+	background-position: center;
+}
+
+.game-page__profile {
+	background: url(../images/profile.svg) -3px no-repeat;
+	width: 26px;
+	min-width: 26px;
+	height: 26px;
+	min-height: 26px;
+	display: inline-block;
+}
+
+.game-page__top-bar__profile {
+	float: right;
+	height: 100%;
+	width: 130px;
+	min-width: 130px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#userName {
+	margin-left: 8px;
+}
+
+.game-page__top-bar__score {
+	display: inline-block;
+	margin: 21px 0 0 140px;
+	height: 40px;
+	width: 120px;
+	border: 1px solid #383C63;
+	border-radius: 2px;
+	font-size: 16px;
+	text-align: center;
+	animation: pulse 3s infinite;
+	line-height: 38px;
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+	}
+
+	70% {
+		-webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+	}
+
+	100% {
+		-webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+	}
+}
+
+@keyframes pulse {
+	0% {
+		-moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+		box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+	}
+
+	70% {
+		-moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+		box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+	}
+
+	100% {
+		-moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+		box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+	}
+}

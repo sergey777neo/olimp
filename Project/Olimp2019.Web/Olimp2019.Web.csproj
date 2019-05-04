@@ -26,4 +26,20 @@
 	<ItemGroup>
 	  <Folder Include="wwwroot\images\" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Resources\OlimpResource.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>OlimpResource.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Resources\OlimpResource.resx">
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	    <LastGenOutput>OlimpResource.Designer.cs</LastGenOutput>
+	    <CustomToolNamespace>Olimp2019.Resources</CustomToolNamespace>
+	  </EmbeddedResource>
+	</ItemGroup>
+
 </Project>

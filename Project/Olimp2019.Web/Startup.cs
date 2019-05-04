@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Olimp2019.Web.Services;
 using Olimp2019.Data.Models;
+using Olimp2019.Repositories.Implementations;
+using Olimp2019.Repositories;
 
 namespace Olimp2019
 {
@@ -29,23 +31,36 @@ namespace Olimp2019
 			services.AddDbContext<ApplicationDbContext>(options =>
 				options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+			services.AddAuthorization(options =>
+			{
+				options.AddPolicy("RequireAdminRole",
+					 policy => policy.RequireRole("Administrator"));
+			});
+
 			services
-				.AddIdentity<User, Role>(options => { options.Password.RequireNonAlphanumeric = false; })
+				.AddIdentity<User, Role>(options =>
+				{
+					options.Password.RequireNonAlphanumeric = false;
+				})
 				.AddEntityFrameworkStores<ApplicationDbContext>()
 				.AddDefaultTokenProviders();
 
 			services.AddMvc()
-				.AddRazorPagesOptions(options => {
+				.AddRazorPagesOptions(options =>
+				{
 					options.Conventions.AuthorizeFolder("/Account/Manage");
 					options.Conventions.AuthorizePage("/Account/Logout");
+					options.Conventions.AuthorizeFolder("/Reports", "RequireAdminRole");
 				});
 
 			services.AddAuthentication()
-				.AddFacebook(facebookOptions => {
+				.AddFacebook(facebookOptions =>
+				{
 					facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
 					facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
 				})
-				.AddGoogle(options => { 
+				.AddGoogle(options =>
+				{
 					options.ClientId = Configuration["Authentication:Google:ClientId"];
 					options.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
 				});
@@ -53,6 +68,8 @@ namespace Olimp2019
 			// Register no-op EmailSender used by account confirmation and password reset during development
 			// For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
 			services.AddSingleton<IEmailSender, EmailSender>();
+
+			services.AddScoped<IReportRepository, ReportRepository>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

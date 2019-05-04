@@ -1,16 +1,30 @@
 ﻿@page
 @model Olimp2019.Web.Pages.Reports.ReportsModel
 @{
-    Layout = null;
+    ViewData["Title"] = Olimp2019.Data.Resources.Resources.Reports;
+    Layout = "~/Pages/Reports/Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<h2>@Olimp2019.Data.Resources.Resources.Reports</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Reports</title>
-</head>
-<body>
-</body>
-</html>
+<div class="table-responsive">
+    <table class="table">
+        <thead style="font-weight: bold;">
+            <tr>
+                <td>@Olimp2019.Data.Resources.Resources.ReportName</td>
+                <td>@Olimp2019.Data.Resources.Resources.Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reportItem in Model.Reports)
+            {
+            <tr>
+                <td>@reportItem.Caption</td>
+                <td>
+                    <a href="/Reports/@reportItem.Name">@Olimp2019.Data.Resources.Resources.View</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

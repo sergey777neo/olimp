@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Olimp2019.Data.Models
 {
@@ -14,5 +16,11 @@ namespace Olimp2019.Data.Models
 		{
 			base.OnModelCreating(builder);
 		}
+
+        public async virtual Task<List<User>> GetUsersAsync()
+        {
+            return await Users
+                .ToListAsync();
+        }
 	}
 }
