@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -40,9 +40,15 @@ namespace Olimp2019.Web.Pages.Account
 
 		public class InputModel
 		{
-			[Required]
-			[EmailAddress]
+			[Required(ErrorMessage = "Введите e-mail")]
+			[EmailAddress(ErrorMessage = "Неправильный формат")]
+			[Display(Name = "E-mail")]
 			public string Email { get; set; }
+
+			[Required(ErrorMessage = "Введите полное имя")]
+			[DataType(DataType.Text)]
+			[Display(Name = "Полное имя")]
+			public string FullName { get; set; }
 		}
 
 		public IActionResult OnGetAsync()
@@ -76,7 +82,8 @@ namespace Olimp2019.Web.Pages.Account
 			if (result.Succeeded)
 			{
 				_logger.LogInformation("{Name} logged in with {LoginProvider} provider.", info.Principal.Identity.Name, info.LoginProvider);
-				return LocalRedirect(Url.GetLocalUrl(returnUrl));
+
+				return RedirectToPage("/MainPage");
 			}
 			if (result.IsLockedOut)
 			{
@@ -108,16 +115,19 @@ namespace Olimp2019.Web.Pages.Account
 				{
 					throw new ApplicationException("Error loading external login information during confirmation.");
 				}
-				var user = new User { UserName = Input.Email, Email = Input.Email };
+				var user = new User { UserName = Input.Email, Email = Input.Email, FullName = Input.FullName };
 				var result = await _userManager.CreateAsync(user);
 				if (result.Succeeded)
 				{
 					result = await _userManager.AddLoginAsync(user, info);
 					if (result.Succeeded)
 					{
+						await _signInManager.UserManager.AddToRoleAsync(user, "User");
+
 						await _signInManager.SignInAsync(user, isPersistent: false);
 						_logger.LogInformation("User created an account using {Name} provider.", info.LoginProvider);
-						return LocalRedirect(Url.GetLocalUrl(returnUrl));
+
+						return RedirectToPage("/MainPage");
 					}
 				}
 				foreach (var error in result.Errors)
