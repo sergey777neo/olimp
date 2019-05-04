@@ -1,0 +1,34 @@
+﻿@page
+@model Olimp2019.Web.Pages.Reports.ReportUsersModel
+@{
+    ViewData["Title"] = Olimp2019.Data.Resources.Resources.ReportUser;
+    Layout = "~/Pages/Reports/Layout.cshtml";
+}
+
+<h2>@Olimp2019.Data.Resources.Resources.ReportUser</h2>
+
+
+<div class="table-responsive">
+    <table class="table">
+        <thead style="font-weight: bold;">
+            <tr>
+                <td>@Olimp2019.Data.Resources.Resources.Login</td>
+                <td>@Olimp2019.Data.Resources.Resources.FullName</td>
+                <td>@Olimp2019.Data.Resources.Resources.Email</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reportItem in Model.FullReport)
+            {
+                <tr>
+                    <td>@reportItem.UserName</td>
+                    <td>@reportItem.FullName</td>
+                    <td>@reportItem.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+
+        <a href="~/Reports/Reports">Назад</a>
+

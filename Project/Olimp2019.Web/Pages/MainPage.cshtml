@@ -1,9 +1,35 @@
 ﻿@page
 @model Olimp2019.Web.Pages.MainPageModel
 @{
-    ViewData["Title"] = "MainPage";
-    Layout = "~/Pages/_Layout.cshtml";
+	ViewData["Title"] = "MainPage";
+	Layout = "~/Pages/_Layout.cshtml";
 }
 
-<h2>MainPage</h2>
+<environment include="Development">
+	<link rel="stylesheet" href="~/css/game.css" />
+</environment>
+<environment exclude="Development">
+	<link rel="stylesheet" href="~/css/game.min.css" asp-append-version="true" />
+</environment>
 
+<div class="game-page__left-bar medium-font no-select">
+	<div class="game-page__left-bar__item game-page__map"></div>
+	<div class="game-page__levels">
+		<div class="game-page__left-bar__item">1</div>
+		<div class="game-page__left-bar__item">2</div>
+		<div class="game-page__left-bar__item">3</div>
+		<div class="game-page__left-bar__item">4</div>
+		<div class="game-page__left-bar__item">5</div>
+	</div>
+	<div class="game-page__left-bar__item game-page__exit"></div>
+</div>
+<div class="game-page__top-bar no-select">
+	<div class="game-page__top-bar__score">
+		<span class="light-font">Бали: </span>
+		<span id="userScore" class="medium-font">220</span>
+	</div>
+	<div id="userProfile" class="game-page__left-bar__item game-page__top-bar__profile">
+		<div class="game-page__profile"></div>
+		<span id="userName">@Model.CurrentUserFullName</span>
+	</div>
+</div>
