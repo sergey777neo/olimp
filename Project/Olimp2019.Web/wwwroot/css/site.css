@@ -53,7 +53,7 @@ input, textarea {
 }
 
 .index-page__pre-header {
-	color: #9CABFF;
+	color: white;
 	font-size: 18px;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
@@ -360,6 +360,6 @@ input, textarea {
 }
 
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
