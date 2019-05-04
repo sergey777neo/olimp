@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.idea
+/Project/Olimp2019.Data/bin
+/Project/Olimp2019.Data/obj
+/Project/.vs
+/Project/Olimp2019.Tests/bin
+/Project/Olimp2019.Tests/obj
+/Project/Olimp2019.Web/bin
+/Project/Olimp2019.Web/obj
+/Project/Olimp2019.Web/wwwroot/css/game.min.css
+/Project/Olimp2019.Web/wwwroot/js/site.min.js
+/Project/Olimp2019.Web/wwwroot/js/background-animation.min.js
