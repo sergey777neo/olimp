@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -35,20 +35,29 @@ namespace Olimp2019.Web.Pages.Account
 
 		public class InputModel
 		{
-			[Required]
-			[EmailAddress]
+			[Required(ErrorMessage = "Введите e-mail")]
+			[EmailAddress(ErrorMessage = "Неправильный формат")]
+			[Display(Name = "E-mail")]
 			public string Email { get; set; }
 
-			[Required]
+			[Required(ErrorMessage = "Введите пароль")]
+			[Display(Name = "Пароль")]
 			[DataType(DataType.Password)]
 			public string Password { get; set; }
 
-			[Display(Name = "Remember me?")]
+			[Display(Name = "Запомнить меня")]
 			public bool RememberMe { get; set; }
 		}
 
 		public async Task OnGetAsync(string returnUrl = null)
 		{
+			if (User.Identity.IsAuthenticated)
+			{
+				var user = await _signInManager.UserManager.FindByNameAsync(User.Identity.Name);
+				string existingRole = _signInManager.UserManager.GetRolesAsync(user).Result.Single();
+				DefineRedirect(returnUrl, existingRole);
+			}
+
 			if (!string.IsNullOrEmpty(ErrorMessage))
 			{
 				ModelState.AddModelError(string.Empty, ErrorMessage);
@@ -74,7 +83,10 @@ namespace Olimp2019.Web.Pages.Account
 				if (result.Succeeded)
 				{
 					_logger.LogInformation("User logged in.");
-					return LocalRedirect(Url.GetLocalUrl(returnUrl));
+					var user = await _signInManager.UserManager.FindByEmailAsync(Input.Email);
+					string existingRole = _signInManager.UserManager.GetRolesAsync(user).Result.Single();
+
+					return DefineRedirect(returnUrl, existingRole);
 				}
 				if (result.RequiresTwoFactor)
 				{
@@ -87,13 +99,26 @@ namespace Olimp2019.Web.Pages.Account
 				}
 				else
 				{
-					ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+					ModelState.AddModelError(string.Empty, "Неправильные данные");
+					ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 					return Page();
 				}
 			}
 
 			// If we got this far, something failed, redisplay form
 			return Page();
+		}
+
+		private RedirectToPageResult DefineRedirect(string returnUrl, string role)
+		{
+			if (role == "Administrator") {
+				Response.Redirect("/Reports/Reports");
+			}
+			else if (role == "User") {
+				Response.Redirect("/MainPage");
+			}
+
+			return RedirectToPage(returnUrl);
 		}
 	}
 }

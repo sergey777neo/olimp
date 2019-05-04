@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
@@ -26,8 +26,9 @@ namespace Olimp2019.Web.Pages.Account
 
 		public class InputModel
 		{
-			[Required]
-			[EmailAddress]
+			[Required(ErrorMessage = "Введите e-mail")]
+			[EmailAddress(ErrorMessage = "Неправильный формат")]
+			[Display(Name = "E-mail")]
 			public string Email { get; set; }
 		}
 
