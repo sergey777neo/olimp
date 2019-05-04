@@ -1,79 +1,52 @@
-@page
+﻿@page
 @model LoginModel
 
-@{
-	ViewData["Title"] = "Log in";
-}
-
-<h2>@ViewData["Title"]</h2>
-<div class="row">
-	<div class="col-md-4">
-		<section>
-			<form method="post">
-				<h4>Use a local account to log in.</h4>
-				<hr />
-				<div asp-validation-summary="All" class="text-danger"></div>
-				<div class="form-group">
-					<label asp-for="Input.Email"></label>
-					<input asp-for="Input.Email" class="form-control" />
-					<span asp-validation-for="Input.Email" class="text-danger"></span>
-				</div>
-				<div class="form-group">
-					<label asp-for="Input.Password"></label>
-					<input asp-for="Input.Password" class="form-control" />
-					<span asp-validation-for="Input.Password" class="text-danger"></span>
-				</div>
-				<div class="form-group">
-					<div class="checkbox">
-						<label asp-for="Input.RememberMe">
-							<input asp-for="Input.RememberMe" />
-							@Html.DisplayNameFor(m => m.Input.RememberMe)
-						</label>
-					</div>
-				</div>
-				<div class="form-group">
-					<button type="submit" class="btn btn-default">Log in</button>
-				</div>
-				<div class="form-group">
-					<p>
-						<a asp-page="./ForgotPassword">Forgot your password?</a>
-					</p>
-					<p>
-						<a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-					</p>
-				</div>
-			</form>
-		</section>
+<div class="login-page">
+	<span class="login-page__title">Вход</span>
+	<span class="login-page__after-title">Войдите в аккаунт, чтобы начать игру</span>
+	<form method="post" asp-route-returnUrl="@Model.ReturnUrl">
+		<div class="field light-font">
+			<input asp-for="Input.Email" class="form-control" />
+			<label asp-for="Input.Email"></label>
+			<span asp-validation-for="Input.Email" class="text-danger"></span>
+		</div>
+		<div class="field light-font">
+			<input asp-for="Input.Password" class="form-control" />
+			<label asp-for="Input.Password"></label>
+			<span asp-validation-for="Input.Password" class="text-danger"></span>
+		</div>
+		<div class="form-group light-font">
+			<div class="login-page__remember-me checkbox">
+				<label asp-for="Input.RememberMe">
+					<input asp-for="Input.RememberMe" />
+					@Html.DisplayNameFor(m => m.Input.RememberMe)
+				</label>
+			</div>
+			<a class="login-page__forgot-password" asp-page="./ForgotPassword">Забыли пароль?</a>
+		</div>
+		<div class="medium-font">
+			<button type="submit" class="login-page__login-button">Начать игру</button>
+		</div>
+		<div class="text-danger">
+			<div asp-validation-summary="ModelOnly"></div>
+		</div>
+	</form>
+	<div class="login-page__register-button light-font">
+		<a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Зарегистрироваться</a>
 	</div>
-	<div class="col-md-6 col-md-offset-2">
-		<section>
-			<h4>Use another service to log in.</h4>
-			<hr />
-			@{
-				if ((Model.ExternalLogins?.Count ?? 0) == 0)
-				{
-					<div>
-						<p>
-							There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-							for details on setting up this ASP.NET application to support logging in via external services.
-						</p>
-					</div>
-				}
-				else
-				{
-					<form asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
-						<div>
-							<p>
-								@foreach (var provider in Model.ExternalLogins)
-								{
-									<button type="submit" class="btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-								}
-							</p>
-						</div>
-					</form>
-				}
+	<div class="login-page__or-label light-font">Или</div>
+	<div class="login-page__social-buttons light-font">
+		@{
+			if ((Model.ExternalLogins?.Count ?? 0) != 0)
+			{
+				<form asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+					@foreach (var provider in Model.ExternalLogins)
+					{
+						<button type="submit" class="btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"><i class="fa fa-@provider.Name.ToLower()"></i> @provider.DisplayName</button>
+					}
+				</form>
 			}
-		</section>
+		}
 	</div>
 </div>
 
