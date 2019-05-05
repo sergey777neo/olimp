@@ -13,6 +13,7 @@ namespace Olimp2019.Data.DataSeed
 
 			await SeedUserRoles(context, roleManager);
 		}
+
 		public static async Task SeedUserRoles(ApplicationDbContext context, RoleManager<Role> roleManager)
 		{
 			if (!context.Roles.Any())

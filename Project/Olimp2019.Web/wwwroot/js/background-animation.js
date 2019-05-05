@@ -222,13 +222,9 @@ function goMovie() {
 }
 goMovie();
 
-$("#elem").hover(function (e) {
-	$("#img").mouseenter(e);
-});
-
-//$("body")[0].addEventListener('mouseenter', onMouseEnter);
-//$("body")[0].addEventListener('mouseleave', onMouseLeave);
-//$("body")[0].addEventListener('mousemove', onMouseMove);
+$(".game-page__game-container")[0].addEventListener('mouseenter', onMouseEnter);
+$(".game-page__game-container")[0].addEventListener('mouseleave', onMouseLeave);
+$(".game-page__game-container")[0].addEventListener('mousemove', onMouseMove);
 
 // Mouse effect
 canvas.addEventListener('mouseenter', onMouseEnter);

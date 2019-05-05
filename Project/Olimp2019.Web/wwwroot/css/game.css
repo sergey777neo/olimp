@@ -95,6 +95,14 @@ body {
 	line-height: 38px;
 }
 
+.game-page__game-container {
+	position: fixed;
+	top: 84px;
+	bottom: 0;
+	left: 84px;
+	right: 0;
+}
+
 @-webkit-keyframes pulse {
 	0% {
 		-webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
