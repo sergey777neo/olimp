@@ -13,6 +13,7 @@ using Olimp2019.Web.Services;
 using Olimp2019.Data.Models;
 using Olimp2019.Repositories.Implementations;
 using Olimp2019.Repositories;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Olimp2019
 {
@@ -41,6 +42,7 @@ namespace Olimp2019
 				.AddIdentity<User, Role>(options =>
 				{
 					options.Password.RequireNonAlphanumeric = false;
+                    options.SignIn.RequireConfirmedEmail = true;
 				})
 				.AddEntityFrameworkStores<ApplicationDbContext>()
 				.AddDefaultTokenProviders();
@@ -51,7 +53,8 @@ namespace Olimp2019
 					options.Conventions.AuthorizeFolder("/Account/Manage");
 					options.Conventions.AuthorizePage("/Account/Logout");
 					options.Conventions.AuthorizeFolder("/Reports", "RequireAdminRole");
-				});
+				})
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 			services.AddAuthentication()
 				.AddFacebook(facebookOptions =>
@@ -65,11 +68,15 @@ namespace Olimp2019
 					options.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
 				});
 
-			// Register no-op EmailSender used by account confirmation and password reset during development
-			// For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
-			services.AddSingleton<IEmailSender, EmailSender>();
+            // Register no-op EmailSender used by account confirmation and password reset during development
+            // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.Configure<AuthMessageSenderOptions>(options => {
+                options.SendGridKey = Configuration["SendGrid:SendGridKey"];
+                options.SendGridUser = Configuration["SendGrid:SendGridUser"];
+            });
 
-			services.AddScoped<IReportRepository, ReportRepository>();
+            services.AddScoped<IReportRepository, ReportRepository>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
