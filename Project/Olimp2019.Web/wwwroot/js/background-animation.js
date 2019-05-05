@@ -222,9 +222,12 @@ function goMovie() {
 }
 goMovie();
 
-$(".game-page__game-container")[0].addEventListener('mouseenter', onMouseEnter);
-$(".game-page__game-container")[0].addEventListener('mouseleave', onMouseLeave);
-$(".game-page__game-container")[0].addEventListener('mousemove', onMouseMove);
+let game = $(".game-page__game-container")[0];
+if (game) {
+	game.addEventListener('mouseenter', onMouseEnter);
+	game.addEventListener('mouseleave', onMouseLeave);
+	game.addEventListener('mousemove', onMouseMove);
+}
 
 // Mouse effect
 canvas.addEventListener('mouseenter', onMouseEnter);

@@ -40,9 +40,10 @@ body {
 	width: 82px;
 	height: 82px;
 	min-height: 82px;
-	text-align: center;
-	line-height: 82px;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .game-page__left-bar__item:hover {
@@ -73,9 +74,6 @@ body {
 	height: 100%;
 	width: 130px;
 	min-width: 130px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 #userName {
@@ -103,6 +101,23 @@ body {
 	right: 0;
 }
 
+.game-page__current-level {
+	text-align: center;
+	height: 38px;
+	width: 38px;
+	border-radius: 50%;
+	animation: pulse 3s infinite;
+}
+
+.game-page__done-level {
+	text-align: center;
+	height: 38px;
+	width: 38px;
+	line-height: 34px;
+	border: 2px solid greenyellow;
+	border-radius: 50%;
+}
+
 @-webkit-keyframes pulse {
 	0% {
 		-webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
@@ -124,8 +139,8 @@ body {
 	}
 
 	70% {
-		-moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
-		box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+		-moz-box-shadow: 0 0 0 15px rgba(204, 169, 44, 0);
+		box-shadow: 0 0 0 15px rgba(204, 169, 44, 0);
 	}
 
 	100% {

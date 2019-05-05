@@ -11,6 +11,8 @@ namespace Olimp2019.Data.Models
 		public int Score { get; set; }
 
 		[DefaultValue(1)]
-		public int NextLevel { get; set; }
+		public int CurrentLevel { get; set; }
+
+		public int CurrentStep { get; set; }
 	}
 }

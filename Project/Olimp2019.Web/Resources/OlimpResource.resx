@@ -117,28 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Action" xml:space="preserve">
-    <value>Действие</value>
+  <data name="GamePage_Score_Label" xml:space="preserve">
+    <value>Бали</value>
   </data>
-  <data name="ReportName" xml:space="preserve">
-    <value>Название отчета</value>
+  <data name="Global_Exit" xml:space="preserve">
+    <value>Вихід</value>
   </data>
-  <data name="Reports" xml:space="preserve">
-    <value>Отчеты</value>
+  <data name="Reports_Action" xml:space="preserve">
+    <value>Дії</value>
   </data>
-  <data name="ReportUser" xml:space="preserve">
-    <value>Отчет по пользователям</value>
+  <data name="Reports_Email" xml:space="preserve">
+    <value>Поштова адреса</value>
   </data>
-  <data name="View" xml:space="preserve">
-    <value>Просмотреть</value>
+  <data name="Reports_FullName" xml:space="preserve">
+    <value>Повне ім'я</value>
   </data>
-  <data name="Email" xml:space="preserve">
-    <value>Почтовый адресс</value>
+  <data name="Reports_Login" xml:space="preserve">
+    <value>Логін</value>
   </data>
-  <data name="FullName" xml:space="preserve">
-    <value>Полное имя</value>
+  <data name="Reports_Report" xml:space="preserve">
+    <value>Звіт</value>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>Логин</value>
+  <data name="Reports_ReportName" xml:space="preserve">
+    <value>Назва звіту</value>
+  </data>
+  <data name="Reports_ReportUser" xml:space="preserve">
+    <value>Звіт по користувачам</value>
+  </data>
+  <data name="Reports_View" xml:space="preserve">
+    <value>Передивитись</value>
   </data>
 </root>

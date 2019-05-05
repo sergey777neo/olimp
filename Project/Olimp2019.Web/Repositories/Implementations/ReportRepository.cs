@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Olimp2019.Data.ViewModels;
-using Olimp2019.Resources;
+using Olimp2019.Web.Resources;
 
 namespace Olimp2019.Repositories.Implementations
 {
@@ -19,7 +19,7 @@ namespace Olimp2019.Repositories.Implementations
 						new ReportItemViewModel()
 						{
 							Name = "ReportUsers",
-							Caption = OlimpResource.ReportUser
+							Caption = OlimpResource.Reports_ReportUser
 						}
 					};
 				}

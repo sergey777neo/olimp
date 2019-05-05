@@ -91,6 +91,6 @@ namespace Olimp2019
 			app.UseAuthentication();
 
 			app.UseMvc();
-        }
+		}
 	}
 }

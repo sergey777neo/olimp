@@ -115,7 +115,7 @@ namespace Olimp2019.Web.Pages.Account
 				{
 					throw new ApplicationException("Error loading external login information during confirmation.");
 				}
-				var user = new User { UserName = Input.Email, Email = Input.Email, FullName = Input.FullName };
+				var user = new User { UserName = Input.Email, Email = Input.Email, FullName = Input.FullName, CurrentLevel = 1 };
 				var result = await _userManager.CreateAsync(user);
 				if (result.Succeeded)
 				{

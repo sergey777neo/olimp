@@ -1,30 +1,30 @@
 ﻿@page
 @model Olimp2019.Web.Pages.Reports.ReportsModel
 @{
-    ViewData["Title"] = Olimp2019.Data.Resources.Resources.Reports;
-    Layout = "~/Pages/Reports/Layout.cshtml";
+	ViewData["Title"] = Olimp2019.Web.Resources.OlimpResource.Reports_Report;
+	Layout = "~/Pages/Reports/Layout.cshtml";
 }
 
-<h2>@Olimp2019.Data.Resources.Resources.Reports</h2>
+<h2>@Olimp2019.Web.Resources.OlimpResource.Reports_Report</h2>
 
 <div class="table-responsive">
-    <table class="table">
-        <thead style="font-weight: bold;">
-            <tr>
-                <td>@Olimp2019.Data.Resources.Resources.ReportName</td>
-                <td>@Olimp2019.Data.Resources.Resources.Action</td>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var reportItem in Model.Reports)
-            {
-            <tr>
-                <td>@reportItem.Caption</td>
-                <td>
-                    <a href="/Reports/@reportItem.Name">@Olimp2019.Data.Resources.Resources.View</a>
-                </td>
-            </tr>
-            }
-        </tbody>
-    </table>
+	<table class="table">
+		<thead style="font-weight: bold;">
+			<tr>
+				<td>@Olimp2019.Web.Resources.OlimpResource.Reports_ReportName</td>
+				<td>@Olimp2019.Web.Resources.OlimpResource.Reports_Action</td>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var reportItem in Model.Reports)
+			{
+				<tr>
+					<td>@reportItem.Caption</td>
+					<td>
+						<a href="/Reports/@reportItem.Name">@Olimp2019.Web.Resources.OlimpResource.Reports_View</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
 </div>

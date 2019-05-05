@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Olimp2019.Resources {
+namespace Olimp2019.Web.Resources {
     using System;
     
     
@@ -61,74 +61,92 @@ namespace Olimp2019.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Действие.
+        ///   Looks up a localized string similar to Бали.
         /// </summary>
-        public static string Action {
+        public static string GamePage_Score_Label {
             get {
-                return ResourceManager.GetString("Action", resourceCulture);
+                return ResourceManager.GetString("GamePage_Score_Label", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Почтовый адресс.
+        ///   Looks up a localized string similar to Вихід.
         /// </summary>
-        public static string Email {
+        public static string Global_Exit {
             get {
-                return ResourceManager.GetString("Email", resourceCulture);
+                return ResourceManager.GetString("Global_Exit", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Полное имя.
+        ///   Looks up a localized string similar to Дії.
         /// </summary>
-        public static string FullName {
+        public static string Reports_Action {
             get {
-                return ResourceManager.GetString("FullName", resourceCulture);
+                return ResourceManager.GetString("Reports_Action", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Логин.
+        ///   Looks up a localized string similar to Поштова адреса.
         /// </summary>
-        public static string Login {
+        public static string Reports_Email {
             get {
-                return ResourceManager.GetString("Login", resourceCulture);
+                return ResourceManager.GetString("Reports_Email", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Название отчета.
+        ///   Looks up a localized string similar to Повне ім&apos;я.
         /// </summary>
-        public static string ReportName {
+        public static string Reports_FullName {
             get {
-                return ResourceManager.GetString("ReportName", resourceCulture);
+                return ResourceManager.GetString("Reports_FullName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отчеты.
+        ///   Looks up a localized string similar to Логін.
         /// </summary>
-        public static string Reports {
+        public static string Reports_Login {
             get {
-                return ResourceManager.GetString("Reports", resourceCulture);
+                return ResourceManager.GetString("Reports_Login", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Отчет по пользователям.
+        ///   Looks up a localized string similar to Звіт.
         /// </summary>
-        public static string ReportUser {
+        public static string Reports_Report {
             get {
-                return ResourceManager.GetString("ReportUser", resourceCulture);
+                return ResourceManager.GetString("Reports_Report", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Просмотреть.
+        ///   Looks up a localized string similar to Назва звіту.
         /// </summary>
-        public static string View {
+        public static string Reports_ReportName {
             get {
-                return ResourceManager.GetString("View", resourceCulture);
+                return ResourceManager.GetString("Reports_ReportName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Звіт по користувачам.
+        /// </summary>
+        public static string Reports_ReportUser {
+            get {
+                return ResourceManager.GetString("Reports_ReportUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Передивитись.
+        /// </summary>
+        public static string Reports_View {
+            get {
+                return ResourceManager.GetString("Reports_View", resourceCulture);
             }
         }
     }
