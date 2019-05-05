@@ -20,6 +20,8 @@
 /Project/Olimp2019.Web/Olimp2019.Web.csproj.user
 /Deployment/Agent
 /Project/Olimp2019.Web/bin
-/Project/Olimp2019.Tests/bin/Debug/netcoreapp2.2
 /Project/Olimp2019.Data/bin/Release/netcoreapp2.0
+/Project/Olimp2019.Tests/bin/Debug/netcoreapp2.2
 /publish
+/Project/Olimp2019.Data/bin/Release/netcoreapp2.2
+/Project/Olimp2019.Web/Properties/PublishProfiles
